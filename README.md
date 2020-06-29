@@ -9,7 +9,7 @@ Shows how to bridge to an RPA solution using embedded Camunda Engine in a spring
 
 - start fresh Camunda Run via docker:
 
-  `docker run -d --name camunda -p 8080:8080 registry.camunda.cloud/cambpm-ee/camunda-bpm-platform-ee:run-7.13.0-SNAPSHOT`
+  `docker run -d --name camunda -p 8080:8080 registry.camunda.cloud/cambpm-ee/camunda-bpm-platform-ee:run-7.13.1`
 - install license in admin
 - stop (no delete) container: `docker stop camunda`
 - prepare 3 terminal windows
@@ -73,6 +73,8 @@ Shows how to bridge to an RPA solution using embedded Camunda Engine in a spring
   - `node js-workers/mail.js`
   - `node js-workers/sf.js`
 - observe that salesforce worker immediately picks up some work
+- check in cockpit that we're waiting for user task to put e-mail address into Primate
+- do that user task
 - check in cockpit that the process instance went ahead and now waits at e-mail confirmation receive task
 - use swagger-editor for learning how to hand in message via REST
   - <https://editor.swagger.io>
@@ -96,6 +98,7 @@ Shows how to bridge to an RPA solution using embedded Camunda Engine in a spring
   - showing history in Camunda Cockpit
   - inspecting log output of mail worker
 - upgrade model to use RPA bot instead of user task, like in [3-new-user-registration-automated-rpa.bpmn](3-new-user-registration-automated-rpa.bpmn)
+  - change user task to external with topic=`violetPyramidService`
 - deploy that process as new version to Camunda Run via Camunda Modeler
 - explain the [rpa-worker](rpa-worker/)
   - show [process](rpa-worker/src/main/resources/process.bpmn)

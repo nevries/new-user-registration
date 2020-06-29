@@ -18,7 +18,7 @@ public class Application {
   @Bean
   ExternalTaskClient externalTaskClient() {
     ExternalTaskClient client = ExternalTaskClient.create()
-        .baseUrl("http://localhost:8080/rest")
+        .baseUrl("http://localhost:8080/engine-rest")
         .asyncResponseTimeout(1000)
         .lockDuration(90_000)
         .build();

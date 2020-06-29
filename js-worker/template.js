@@ -4,7 +4,7 @@ const {
 } = require("camunda-external-task-client-js");
 
 const config = {
-    baseUrl: "http://localhost:8080/rest",
+    baseUrl: "http://localhost:8080/engine-rest",
     use: logger,
 };
 

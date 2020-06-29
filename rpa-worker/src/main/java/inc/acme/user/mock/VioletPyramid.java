@@ -24,13 +24,13 @@ public class VioletPyramid {
   private void doTheBotStuff(String email) {
     // a bot is slow
     try {
-      Thread.sleep(10_000l + (long) (Math.random() * 300_000l));
+      Thread.sleep(10_000l + (long) (Math.random() * 20_000l));
     } catch (InterruptedException e) {
     }
 
     // hand in the response message via REST to the embedded engine in this application
     String fooResourceUrl
-        = "http://localhost:8081/rest/message";
+        = "http://localhost:8081/engine-rest/message";
 
     String body = "{\"messageName\": \"VioletPyramid_Response\",\n" +
         "  \"correlationKeys\": {\n" +
