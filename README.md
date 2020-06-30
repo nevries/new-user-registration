@@ -78,8 +78,7 @@ Shows how to bridge to an RPA solution using embedded Camunda Engine in a spring
 - check in cockpit that the process instance went ahead and now waits at e-mail confirmation receive task
 - use swagger-editor for learning how to hand in message via REST
   - <https://editor.swagger.io>
-  - load [openapi-7.13.0-alpha3.json](openapi-7.13.0-alpha3.json)
-  - (change base from `engine-rest` to `rest`)
+  - load [openapi-7.13.0.json](openapi-7.13.0.json)
   - find message endpoint and execute via curl with following body:
 
   ```json
