@@ -16,6 +16,7 @@ public class SendSuccess implements JavaDelegate {
   public void execute(DelegateExecution execution) throws Exception {
     String primateId = execution.getVariable("primate_id").toString();
 
+    // TODO: use public API as soon as https://jira.camunda.com/browse/CAM-11909 is done
     engineClient.complete(execution.getProcessBusinessKey(), Variables.putValue("primate_id", primateId), null);
 
     System.out.println("VioletPyramidService done for email " + execution.getVariable("email").toString() + " returning primate_id " + primateId);

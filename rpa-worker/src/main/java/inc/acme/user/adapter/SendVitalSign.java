@@ -16,6 +16,7 @@ public class SendVitalSign implements JavaDelegate {
 
   @Override
   public void execute(DelegateExecution execution) throws Exception {
+    // TODO: use public API as soon as https://jira.camunda.com/browse/CAM-11909 is done
     engineClient.extendLock(execution.getProcessBusinessKey(), 90_000);
   }
 }

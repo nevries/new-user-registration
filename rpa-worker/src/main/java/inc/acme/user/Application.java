@@ -26,8 +26,7 @@ public class Application {
     return client;
   }
 
-  // little hack until we have a solution for
-  // https://github.com/camunda/camunda-external-task-client-java/issues/25
+  // TODO: use public API as soon as https://jira.camunda.com/browse/CAM-11909 is done
   @Bean
   EngineClient engineClient(@Autowired ExternalTaskClient externalTaskClient) {
     return ((ExternalTaskClientImpl) externalTaskClient).getTopicSubscriptionManager().getEngineClient();
