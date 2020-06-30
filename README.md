@@ -7,11 +7,6 @@ Shows how to bridge to an RPA solution using embedded Camunda Engine in a spring
 
 ### Before you start the demo
 
-- start fresh Camunda Run via docker:
-
-  `docker run -d --name camunda -p 8080:8080 registry.camunda.cloud/cambpm-ee/camunda-bpm-platform-ee:run-7.13.1`
-- install license in admin
-- stop (no delete) container: `docker stop camunda`
 - prepare 3 terminal windows
 
 ### Show the demo
@@ -60,7 +55,9 @@ Shows how to bridge to an RPA solution using embedded Camunda Engine in a spring
     - `PT30S`
   
   so the result should be like [2-new-user-registration-automated.bpmn](2-new-user-registration-automated.bpmn).
-- start Camunda Run docker container: `docker start camunda`
+- start Camunda Run docker container
+  - CE: `docker run -d --rm --name camunda -p 8080:8080 camunda/camunda-bpm-platform:run-7.13.0`
+  - EE: `docker run -d --rm --name camunda -p 8080:8080 -v $HOME/.camunda/license.txt:/camunda/.camunda/license.txt registry.camunda.cloud/cambpm-ee/camunda-bpm-platform-ee:run-7.13.1`
 - deploy process via deploy button in Camunda Modeler
 - start process via [Camunda Tasklist](http://localhost:8080/app/tasklist/)
   - email: `yourname@yourcompany.com`
